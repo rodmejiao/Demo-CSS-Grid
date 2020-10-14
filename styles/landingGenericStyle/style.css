@@ -1,0 +1,113 @@
+*{
+margin: 0;
+box-sizing: border-box;
+}
+
+html{
+    font-family:  'Lato', sans-serif;
+    font-size: 62.5%;
+}
+img{
+    width: 5rem;
+    height: 5rem;
+}
+
+.hero{
+    background-color: #23475b;
+    color: white;
+    padding: 3.2rem 1.5rem;
+    display: grid;
+    grid-template-columns: minmax(auto,102.4rem);
+    justify-content: center;
+
+}
+
+.hero-container{
+    display: grid;
+    grid-template-columns: 7rem 1fr 32rem;
+    grid-template-areas: "badge title form"
+                         ". description form"
+                         ". countdown form";
+}
+
+.badge{
+    grid-area: badge;
+}
+
+.title{
+    font-size: 3.6rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    grid-area: title;
+}
+
+.form{
+    text-align: center;
+    background: rgba(255,255,255,.9);
+    padding:2.4rem;
+    border-radius: 1rem;
+    grid-area: form;
+}
+
+.description{
+    grid-area:description ;
+}
+
+.form input{
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.6rem;
+    border:0.1rem solid #dbdbe2;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.form p {
+    font-size: 2rem;
+    color: #3a3b3f;
+    margin-bottom: 1rem;
+   
+}
+
+.form .button{
+    background-color: #98ca3f;
+    color: white;
+    border-bottom: 0.5rem solid #6d932b;
+    padding: 1rem 1.5rem;
+    display: inline-block;
+}
+
+.countdown{
+grid-area: countdown;
+}
+
+.countdown p{
+ font-size: 2rem;
+ text-align: center;
+ font-weight: 300;   
+}
+
+.countdown span{
+    font-size: 3.3rem;
+}
+
+.countdown span::after{
+content: ':';
+display: inline-block;
+margin: 0 0.5rem;
+}
+
+.countdown span:last-child::after{
+    display: none;
+}
+
+@media screen and (max-width:768px){
+    .hero-container{
+        grid-template-columns: 70px 1fr;
+        grid-template-areas: "badge title "
+        "description description"
+        "form form"
+        "countdown countdown";
+    }
+}
